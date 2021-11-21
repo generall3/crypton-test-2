@@ -14,12 +14,12 @@ contract Ownable {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "ERROR: You are not the owner.");
+        require(msg.sender == owner, "Error: You are not the owner.");
         _;
     }
 
     function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "ERROR: You are not the owner.");
+        require(newOwner != address(0), "Error: You are not the owner.");
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
     }
